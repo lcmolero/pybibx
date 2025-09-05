@@ -1087,6 +1087,8 @@ class pbx_probe():
                 data.rename(columns = {'abbreviated source title': 'abbrev_source_title'}, inplace = True)
             if ('abbrev_source_title' not in data.columns and 'journal' in data.columns):
                 data.rename(columns = {'journal': 'abbrev_source_title'}, inplace = True)
+            if ('abbrev_source_title' not in data.columns and 'Source title' in data.columns):
+                data.rename(columns = {'Source title': 'abbrev_source_title'}, inplace = True)
             if ('document_type' not in data.columns and 'document type' in data.columns):
                 data.rename(columns = {'document type': 'document_type'}, inplace = True)
             if ('art_number.' not in data.columns and 'art. no.' in data.columns):
@@ -6817,3 +6819,4 @@ class pbx_probe():
         return analyze    
 
 ############################################################################
+
